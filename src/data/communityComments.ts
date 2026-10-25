@@ -1,0 +1,85 @@
+import type { PostComment } from '../types'
+
+export const SEED_COMMENTS: PostComment[] = [
+  // Comments on post-1 (HackPune)
+  {
+    id: 'comm-101',
+    postId: 'post-1',
+    authorId: 'u-tanvi',
+    authorName: 'Tanvi Joshi',
+    authorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    authorRole: 'student',
+    content: 'Can first-year students join teams with third-year seniors, or are the tracks split by batch?',
+    createdAt: new Date(Date.now() - 100 * 60_000).toISOString(),
+  },
+  {
+    id: 'comm-102',
+    postId: 'post-1',
+    authorId: 'u-priya',
+    authorName: 'Priya Sharma',
+    authorAvatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80',
+    authorRole: 'community_lead',
+    content: '@Tanvi Joshi Absolutely! Mixed teams are welcome and encouraged. We also have a beginner mentor track to help first years.',
+    createdAt: new Date(Date.now() - 85 * 60_000).toISOString(),
+    parentId: 'comm-101',
+    replyToAuthor: 'Tanvi Joshi',
+  },
+  {
+    id: 'comm-103',
+    postId: 'post-1',
+    authorId: 'u-karan',
+    authorName: 'Karan Nair',
+    authorAvatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80',
+    authorRole: 'student',
+    content: 'Building a smart campus mobility tool for the hackathon. Need 1 frontend dev with Tailwind or React experience! DM me.',
+    createdAt: new Date(Date.now() - 60 * 60_000).toISOString(),
+  },
+
+  // Comments on post-2 (ViT PyTorch)
+  {
+    id: 'comm-201',
+    postId: 'post-2',
+    authorId: 'u-sid',
+    authorName: 'Siddharth Roy',
+    authorAvatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80',
+    authorRole: 'student',
+    content: 'We used Swin-Tiny with gradient checkpointing on Google Colab for our CXR project last term. Huge memory savings. Happy to share our training notebook!',
+    createdAt: new Date(Date.now() - 240 * 60_000).toISOString(),
+  },
+  {
+    id: 'comm-202',
+    postId: 'post-2',
+    authorId: 'u-rohit',
+    authorName: 'Rohit Kulkarni',
+    authorAvatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&auto=format&fit=crop&q=80',
+    authorRole: 'student',
+    content: '@Siddharth Roy That would be fantastic, thank you! Let us meet tomorrow at the campus lab after 4 PM.',
+    createdAt: new Date(Date.now() - 210 * 60_000).toISOString(),
+    parentId: 'comm-201',
+    replyToAuthor: 'Siddharth Roy',
+  },
+
+  // Comments on post-3 (React Meetup)
+  {
+    id: 'comm-301',
+    postId: 'post-3',
+    authorId: 'u-manya',
+    authorName: 'Manya Gupta',
+    authorAvatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80',
+    authorRole: 'student',
+    content: 'Will the slides and code repository be shared for folks who cannot attend in person?',
+    createdAt: new Date(Date.now() - 12 * 3600_000).toISOString(),
+  },
+  {
+    id: 'comm-302',
+    postId: 'post-3',
+    authorId: 'u-demo',
+    authorName: 'You (demo organizer)',
+    authorAvatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
+    authorRole: 'organizer',
+    content: '@Manya Gupta Yes! All code repos and talk slides will be posted right here in the Community section after the meetup.',
+    createdAt: new Date(Date.now() - 11 * 3600_000).toISOString(),
+    parentId: 'comm-301',
+    replyToAuthor: 'Manya Gupta',
+  },
+]

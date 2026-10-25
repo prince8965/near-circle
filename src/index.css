@@ -1,0 +1,62 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-canvas text-ink antialiased font-sans;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-canvas;
+  }
+
+  /* Sleek modern dark scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0B0F19;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 4px;
+    border: 1px solid #334155;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition duration-150 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition duration-150 disabled:cursor-not-allowed disabled:opacity-50 bg-brand text-[#0B0F19] font-bold hover:bg-[#38BDF8] shadow-cyber hover:shadow-neon active:scale-[0.98];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition duration-150 disabled:cursor-not-allowed disabled:opacity-50 bg-secondary text-white border border-[#334155] hover:bg-[#334155] hover:border-slate-500 hover:text-white shadow-sm;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition duration-150 disabled:cursor-not-allowed disabled:opacity-50 text-ink-muted hover:bg-secondary hover:text-white;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition duration-150 disabled:cursor-not-allowed disabled:opacity-50 bg-[#1E293B] text-rose-400 border border-rose-900/50 hover:bg-rose-950/40 hover:border-rose-700;
+  }
+  .card {
+    @apply rounded-2xl bg-secondary shadow-card border border-[#334155]/60;
+  }
+  .input {
+    @apply w-full rounded-xl border border-[#334155] bg-[#0F172A] px-3.5 py-2.5 text-sm text-white placeholder:text-ink-faint transition focus:border-brand focus:ring-1 focus:ring-brand;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-white;
+  }
+  .glass {
+    @apply bg-[#0B0F19]/85 backdrop-blur-md border border-[#1E293B];
+  }
+}
